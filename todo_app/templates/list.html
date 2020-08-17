@@ -19,14 +19,35 @@
   </div>
 
   <div id="main">
-    <a href="{{ url_for('show_list') }}">タスク一覧</a> 
+    <div class="main-container">
+      <div class="task-table">
+
+        <div class="table-header">
+          <h2>タスク一覧</h2>
+          <a href="#">+追加</a>
+        </div>
+
+        {% for item in todo_list %}
+          <div class="table-content">
+            <div class="item-data">
+              <p>{{ item }}</p>
+            </div>
+            <div class="action">
+              <a href="#">削除</a>
+              <a href="#">編集</a>
+            </div>
+          </div>
+        {% endfor %}
+
+      </div>
+    </div>
   </div>
 
   <div id="footer">
     <div class="container">
     </div>
   </div>
-
+  
 </body>
 
 </html>

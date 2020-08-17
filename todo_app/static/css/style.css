@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
 a {
   text-decoration: none;
 }
@@ -13,7 +17,6 @@ li {
   list-style: none;
 }
 /**********************************************/
-
 
 
 /***************** header ******************/
@@ -42,6 +45,7 @@ li {
 
 .header-right {
   float: right;
+  margin-right: 100px;
 }
 
 .header-right a {
@@ -55,5 +59,51 @@ li {
   background-color: rgba(255,255,255,0.4);
 }
 /******************* main ********************/
+.main-container {
+  /* background-color: lightblue; */
+}
 
+.task-table {
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.table-header, .table-content {
+  height: 40px;
+  line-height: 40px;
+}
+
+.table-header {
+  background-color: #698966; /* 灰緑 */
+  background-color: #d0e2be; /* 薄緑 */
+  background-color: #8bc782; /* 浅緑 */ 
+}
+.table-header h2 {
+  float: left;
+  color: white;
+  margin-left: 20px;
+}
+.table-header a {
+  display: inline-block;
+  font-size: 20px;
+  color: white;
+  float: right;
+  margin-right: 30px;
+}
+
+.table-content {
+  border: solid 1px gray;
+}
+.table-content::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.item-data {
+  float: left;
+}
+.action {
+  float: right;
+}
 /********************************************/
