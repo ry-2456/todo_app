@@ -1,0 +1,59 @@
+/********************* 基本設定 **********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+/**********************************************/
+
+
+
+/***************** header ******************/
+#header {
+  height: 60px;
+  background-color: #2a6c50;
+}
+.header-left a, .header-right a {
+  color: white;
+  display: inline-block;
+}
+
+.header-left a:hover {
+  opacity: 0.8;
+}
+
+.header-left {
+  float: left;
+}
+
+.header-left a {
+  font-size: 32px;
+  margin-left: 30px;  
+  line-height: 60px;
+}
+
+.header-right {
+  float: right;
+}
+
+.header-right a {
+  line-height: 60px;
+  font-size: 20px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.header-right a:hover {
+  background-color: rgba(255,255,255,0.4);
+}
+/******************* main ********************/
+
+/********************************************/

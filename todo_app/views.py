@@ -4,3 +4,8 @@ from todo_app import app
 @app.route("/")
 def top():
     return render_template("top.html")
+
+@app.route("/list")
+def show_list():
+    todo_list = ["歯を磨く", "結婚する", "大根を買う"]
+    return render_template("list.html", todo_list=todo_list)

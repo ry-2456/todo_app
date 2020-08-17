@@ -3,12 +3,18 @@
 <head>
   <meta charset="utf-8">
   <title>todo_app</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/top.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
   <div id="header">
     <div class="container">
-      <h1>TODO APP</h1>  
+      <div class="header-left">
+        <a href="{{ url_for('top') }}">todo app</a>
+      </div>
+      <div class="header-right">
+        <a href="#">log in</a>
+        <a href="#">sign up</a>
+      </div>
     </div>
   </div>
 
@@ -21,7 +27,6 @@
     <div class="container">
     </div>
   </div>
-  
 
 </body>
 
