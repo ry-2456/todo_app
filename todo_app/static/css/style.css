@@ -100,9 +100,11 @@ li {
   display: block;
   clear: both;
 }
+
 .item-data {
   float: left;
 }
+
 .action {
   float: right;
 }
