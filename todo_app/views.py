@@ -12,8 +12,9 @@ def show_list():
         sql = "SELECT * FROM task"
         cur.execute(sql)
         # mysql.connection.commit() # delete, update, insertの場合のみ
-        todo_list = cur.fetchall()
-        todo_list = [row[1] for row in todo_list]
+        task_list = cur.fetchall()
+        task_list = map(lambda row:
+            {"id":row[0], "content":row[1]}, task_list)
 
     # cur = mysql.connection.cursor()
     # sql = "SELECT * FROM task"
@@ -23,18 +24,23 @@ def show_list():
     # todo_list = [row[1] for row in todo_list]
     # cur.close()
 
-    return render_template("list.html", todo_list=todo_list)
+    return render_template("list.html", task_list=task_list)
 
 @app.route("/edit")
-def edit():
+def edit_task():
     pass
 
-@app.route("/delete")
-def delete():
-    pass
+@app.route("/delete/<int:task_id>", methods=["POST"])
+def delete_task(task_id):
+    with mysql.connection.cursor() as cur:
+        sql = "DELETE FROM task WHERE id={}".format(task_id)
+        cur.execute(sql)
+        mysql.connection.commit() 
+
+    return redirect(url_for("show_list"))
 
 @app.route("/add", methods=["GET", "POST"])
-def add():
+def add_task():
     if request.method == "GET":
         return render_template("add_task.html")
 
@@ -44,6 +50,6 @@ def add():
         with mysql.connection.cursor() as cur:
             sql = "INSERT INTO task (todo) VALUES ('{}')".format(task_todo)
             cur.execute(sql)
-            mysql.connection.commit() # delete, update, insertの場合のみ
+            mysql.connection.commit()
 
         return redirect(url_for("show_list"))

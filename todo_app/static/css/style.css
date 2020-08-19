@@ -99,16 +99,19 @@ a:hover {
   clear: both;
 }
 
-.item-data {
+.task-data {
   float: left;
 }
 
 .action {
   float: right;
 }
+.action form {
+  display: inline-block; 
+}
 /********************************************/
 
-/**************** new_task main *************/
+/**************** add_task main *************/
 .new-item-form {
 }
 
