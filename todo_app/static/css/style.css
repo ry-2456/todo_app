@@ -17,7 +17,9 @@ li {
   list-style: none;
 }
 /**********************************************/
-
+a:hover {
+  opacity: 0.8;
+}
 
 /***************** header ******************/
 #header {
@@ -27,10 +29,6 @@ li {
 .header-left a, .header-right a {
   color: white;
   display: inline-block;
-}
-
-.header-left a:hover {
-  opacity: 0.8;
 }
 
 .header-left {
@@ -58,13 +56,13 @@ li {
 .header-right a:hover {
   background-color: rgba(255,255,255,0.4);
 }
-/******************* main ********************/
+/******************* list main ********************/
 .main-container {
   /* background-color: lightblue; */
 }
 
 .task-table {
-  width: 900px;
+  width: 700px;
   margin: 0 auto;
   margin-top: 30px;
 }
@@ -107,5 +105,29 @@ li {
 
 .action {
   float: right;
+}
+/********************************************/
+
+/**************** new_task main *************/
+.new-item-form {
+}
+
+.new-item-form form {
+  text-align: center;
+  background-color: lightgreen;
+  margin: 0 auto;
+}
+
+.new-item-form .input_field {
+  width: 80%;
+  padding: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: solid 2px #dee7ec;
+}
+
+.new-item-form .submitbtn {
+  width: 10%;
+  height: 30px;
 }
 /********************************************/
