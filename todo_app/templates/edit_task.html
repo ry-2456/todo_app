@@ -23,14 +23,15 @@
       <div class="task-table">
 
         <div class="table-header">
-          <h2>新規タスク</h2>
+          <h2>タスク編集</h2>
           <a href="{{ url_for('show_list') }}">戻る</a>
         </div>
 
         <div class="item-form">
-          <form action="" method="POST">
-            <input type="text" name="task_todo" class="input_field"/>
-            <input type="submit" value="作成" class="submitbtn"/>
+          <form action="{{ url_for('edit_task', task_id=task_edited.id) }}" method="POST">
+            <input type="text" value="{{ task_edited.content }}"
+                name="task_edited" class="input_field"/>
+            <input type="submit" value="完了" class="submitbtn"/>
           </form>
         </div>
 

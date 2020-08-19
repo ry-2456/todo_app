@@ -106,22 +106,24 @@ a:hover {
 .action {
   float: right;
 }
+
 .action form {
   display: inline-block; 
 }
+
 /********************************************/
 
 /**************** add_task main *************/
-.new-item-form {
+.item-form {
 }
 
-.new-item-form form {
+.item-form form {
   text-align: center;
   background-color: lightgreen;
   margin: 0 auto;
 }
 
-.new-item-form .input_field {
+.item-form .input_field {
   width: 80%;
   padding: 5px;
   margin-top: 20px;
@@ -129,7 +131,7 @@ a:hover {
   border: solid 2px #dee7ec;
 }
 
-.new-item-form .submitbtn {
+.item-form .submitbtn {
   width: 10%;
   height: 30px;
 }

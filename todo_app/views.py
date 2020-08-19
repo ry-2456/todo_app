@@ -26,9 +26,27 @@ def show_list():
 
     return render_template("list.html", task_list=task_list)
 
-@app.route("/edit")
-def edit_task():
-    pass
+@app.route("/edit/<int:task_id>", methods=["GET", "POST"])
+def edit_task(task_id):
+
+    if request.method == "GET":
+        with mysql.connection.cursor() as cur:
+            sql = "SELECT * FROM task WHERE id = {}".format(task_id)
+            cur.execute(sql)
+            task = cur.fetchone()
+            task = {"id":task[0], "content":task[1]}
+
+        return render_template("edit_task.html", task_edited=task)
+
+    if request.method == "POST":
+        task_edited = request.form["task_edited"] 
+        with mysql.connection.cursor() as cur:
+            sql = "UPDATE task SET todo = '{}' WHERE id = {}"\
+                .format(task_edited, task_id)
+            cur.execute(sql)
+            mysql.connection.commit()
+        
+        return redirect(url_for("show_list"))
 
 @app.route("/delete/<int:task_id>", methods=["POST"])
 def delete_task(task_id):
