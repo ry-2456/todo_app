@@ -30,7 +30,7 @@
         <div class="item-form">
           <form action="{{ url_for('edit_task', task_id=task_edited.id) }}" method="POST">
             <input type="text" value="{{ task_edited.content }}"
-                name="task_edited" class="input_field"/>
+                name="content_edited" class="input_field"/>
             <input type="submit" value="完了" class="submitbtn"/>
           </form>
         </div>
