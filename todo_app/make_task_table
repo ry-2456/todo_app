@@ -1,0 +1,16 @@
+USE flask_todo_app;
+
+DROP TABLE IF EXISTS task;
+
+CREATE TABLE task (
+  id INT NOT NULL AUTO_INCREMENT,
+  todo VARCHAR(50) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+INSERT INTO task (todo) VALUES
+  ("フォームのvalidationチェック"), 
+  ("フラッシュメッセージの出力機能"), 
+  ("タスクをグループ分けする機能"),
+  ("大阪に帰る"), ("懸垂をする");
+  
